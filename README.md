@@ -10,6 +10,8 @@ paddleocr --image_dir realesrgan-ncnn-vulkan-20220424-macos/input3.jpg --use_ang
 paddleocr --image_dir testImg/xx31.jpg --use_angle_cls true --use_gpu false
 paddleocr --image_dir testImg/xx2.jpeg --use_angle_cls true --use_gpu false
 paddleocr --image_dir testImg/xx1.jpeg --use_angle_cls true --use_gpu false
+paddleocr --image_dir "/Users/51pwn/MyWork/mybugbounty/ai/i1.jpg" --ocr_version PP-OCRv3 --use_angle_cls true --use_gpu false
+paddleocr --image_dir "/Users/51pwn/MyWork/mybugbounty/ai/i1.jpg" --use_angle_cls true --use_gpu false --det_db_box_thresh 0.5 --det_db_unclip_ratio 1.5 --use_space_char true
 
 ```
 ## 车牌ORV

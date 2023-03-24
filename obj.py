@@ -61,17 +61,22 @@ print("cascades: "+str(len(cascades)))
 faces=[]
 for c in cascades:
     x=c.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5)
-    if len(x) == 4:
+    if len(x) >= 4:
         faces.append(x)
 
+n=0
 # 标记物体
 for face in faces:
     if len(face) != 4:
         continue
+    n+=1
     (x, y, w, h) = face
     cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-# 显示结果
-cv2.imshow("Image", img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+if 0 < n:
+    # 显示结果
+    cv2.imshow("Image", img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+else:
+    print("没有检测到任何物体")
